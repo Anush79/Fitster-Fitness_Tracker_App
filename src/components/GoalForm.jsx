@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { addGoal } from "../redux/actions";
 
-export function GoalsForm() {
+export function GoalsForm({ onClose}) {
   const [formData, setData] = useState({
     name: "",
     description: "",
@@ -28,6 +28,7 @@ export function GoalsForm() {
       targetCalories: "",
       status: "",
     });
+    onClose()
   }
 
   return (

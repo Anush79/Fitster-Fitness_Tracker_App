@@ -3,7 +3,7 @@ import { useState } from "react";
 import { EXERCISEDATA } from "../utils/constants";
 import { addExercise } from "../redux/actions";
 
-export const AddExerciseForm = () => {
+export const AddExerciseForm = ({ onClose}) => {
   const [formData, setData] = useState({
     name: "",
     duration: "",
@@ -33,6 +33,7 @@ export const AddExerciseForm = () => {
         exercise: ""
       }
     });
+    onClose()
   }
   return (
     <>

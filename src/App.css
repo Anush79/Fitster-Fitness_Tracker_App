@@ -78,6 +78,10 @@ a{
   border:1mm ridge var(--primary-color);
   box-shadow:0 0 7px var(--primary-color)
 }
+svg:hover{
+  cursor: pointer;
+  color:var(--primary-color)
+}
 @media (min-width:670px) {
   header{
     display: flex;

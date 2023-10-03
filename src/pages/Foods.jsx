@@ -34,7 +34,7 @@ export default function Foods() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={boxStyle}>
-          <FoodForm />
+          <FoodForm  onClose={handleClose}/>
         </Box>
       </Modal>
     </div>

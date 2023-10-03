@@ -34,7 +34,7 @@ export default function Goals() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={boxStyle}>
-          <GoalsForm />
+          <GoalsForm  onClose={handleClose}/>
         </Box>
       </Modal>
     </div>

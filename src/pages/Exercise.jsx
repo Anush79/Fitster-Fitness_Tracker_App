@@ -38,7 +38,7 @@ export default function Exercise() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={boxStyle}>
-          <AddExerciseForm />
+          <AddExerciseForm  onClose={handleClose}/>
         </Box>
       </Modal>
     </div>
