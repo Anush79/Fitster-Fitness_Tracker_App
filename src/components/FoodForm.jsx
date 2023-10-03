@@ -1,8 +1,8 @@
-import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { addFood } from "../redux/actions";
 
-export function FoodForm({ onClose}) {
+export function FoodForm({ onClose }) {
   const [formData, setFormData] = useState({
     name: "",
     protein: "",
@@ -25,7 +25,7 @@ export function FoodForm({ onClose}) {
       fat: "",
       carbohydrate: "",
     });
-    onClose()
+    onClose();
   };
   return (
     <>

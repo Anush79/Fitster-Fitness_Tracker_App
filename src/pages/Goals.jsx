@@ -19,7 +19,7 @@ export default function Goals() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getGoals());
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       <h1>

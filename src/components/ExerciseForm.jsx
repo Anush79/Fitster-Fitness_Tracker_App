@@ -1,7 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { EXERCISEDATA } from "../utils/constants";
+import { useDispatch } from "react-redux";
 import { addExercise } from "../redux/actions";
+import { EXERCISEDATA } from "../utils/constants";
 
 export const AddExerciseForm = ({ onClose}) => {
   const [formData, setData] = useState({

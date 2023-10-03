@@ -18,10 +18,10 @@ export default function Exercise() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  console.log(loading);
+
   useEffect(() => {
     dispatch(getExercises());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

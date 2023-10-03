@@ -22,7 +22,7 @@ const {
   DELETE_GOAL_SUCCESS,
   DELETE_FOOD_SUCCESS,
   DELETE_EXERCISE_SUCCESS,
- 
+
   DELETE_GOAL_ERROR,
   DELETE_FOOD_ERROR,
   DELETE_EXERCISE_ERROR,
@@ -41,9 +41,8 @@ const fitnessReducer = (state = initialState, { type, payload }) => {
   console.log(state)
   switch (type) {
     case SET_LOADING:
-      return {...state, loading:true}
+      return { ...state, loading: true }
     case GET_EXERCISES_SUCCESS:
-
       return { ...state, exercises: [...payload], loading: false }
     case GET_GOALS_SUCCESS:
       return { ...state, goals: [...payload], loading: false }
@@ -51,15 +50,37 @@ const fitnessReducer = (state = initialState, { type, payload }) => {
       return { ...state, foods: [...payload], loading: false }
     case ADD_EXERCISE_SUCCESS:
       return { ...state, exercises: [...state.exercises, payload], loading: false }
+    case ADD_FOOD_SUCCESS:
+      return { ...state, foods: [...state.foods, payload], loading: false }
+    case ADD_GOAL_SUCCESS:
+      return { ...state, goals: [...state.goals, payload], loading: false }
     case DELETE_EXERCISE_SUCCESS:
-      return {...state, exercises:payload, loading:false}
-      case DELETE_GOAL_SUCCESS:
-        return {...state, goals:payload, loading:false}
-        case DELETE_FOOD_SUCCESS:
-          return {...state, foods:payload, loading:false}
+      return { ...state, exercises: payload, loading: false }
+    case DELETE_GOAL_SUCCESS:
+      return { ...state, goals: payload, loading: false }
+    case DELETE_FOOD_SUCCESS:
+      return { ...state, foods: payload, loading: false }
+    case GET_EXERCISES_ERRORS:
+      return { ...state, loading: false, error: payload }
+    case GET_FOODS_ERRORS:
+      return { ...state, loading: false, error: payload }
+    case GET_GOALS_ERRORS:
+      return { ...state, loading: false, error: payload }
+    case ADD_EXERCISE_ERROR:
+      return { ...state, loading: false, error: payload }
+    case ADD_FOOD_ERROR:
+      return { ...state, loading: false, error: payload }
+    case ADD_GOAL_ERROR:
+      return { ...state, loading: false, error: payload }
+    case DELETE_EXERCISE_ERROR:
+      return { ...state, loading: false, error: payload };
+    case DELETE_FOOD_ERROR:
+      return { ...state, loading: false, error: payload }
+    case DELETE_GOAL_ERROR:
+      return { ...state, loading: false, error: payload }
     default:
       break;
   }
 }
 
-export  {fitnessReducer}
+export { fitnessReducer }

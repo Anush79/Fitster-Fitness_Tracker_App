@@ -18,7 +18,7 @@ export default function Foods() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFoods());
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       <h1>

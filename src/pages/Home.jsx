@@ -30,7 +30,7 @@ export default function Home() {
     dispatch(getGoals());
     dispatch(getFoods());
     dispatch(getExercises());
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       <h1>Dashboard</h1>
