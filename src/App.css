@@ -1,86 +1,114 @@
 @import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;500;600;700&display=swap');
 
-.App{
+.App {
   font-family: 'AR One Sans', sans-serif;
   text-align: center;
   background-color: #000;
-  color:#ddd;
-  min-height:100vh;
+  color: #ddd;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-header{
+
+header {
   display: flex;
   flex-direction: column;
-  padding:1rem;
-}
-main{
- flex-grow: 1;
+  padding: 1rem;
 }
 
-nav{
+main {
+  flex-grow: 1;
+}
+
+nav {
   min-width: 320px;
   display: flex;
   justify-content: space-between;
 }
-.logo{
-  color:var(--primary-color);
-  text-decoration:overline;
-  text-transform:uppercase;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+.logo {
+  color: var(--primary-color);
+  text-decoration: overline;
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-button{
-  border-radius:5px;
-  border:none;
-  padding:0.5rem 1rem;
+
+button {
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem 1rem;
   background-color: var(--primary-color);
   font-weight: 700;
-  font-size:1rem;
+  font-size: 1rem;
 }
-button:hover{
-  cursor:pointer;
+
+button:hover {
+  cursor: pointer;
   opacity: 0.8;
 }
-input,select{
-  padding:0.5rem;
+
+input,
+select {
+  padding: 0.5rem;
   font-family: inherit;
   font-weight: 500;
 }
-option{
-  padding:23px
+
+option {
+  padding: 23px
 }
-option:hover{
+
+option:hover {
   cursor: pointer;
   background-color: var(--primary-color);
 }
-a{
+
+a {
   text-decoration: none;
   color: var(--secondary-color);
 }
-.active{
+
+.active {
   color: var(--primary-color);
-  text-shadow: 0px 12px 3px #a5ff5c;
+  text-shadow: 0px 10px 4px #a5ff5c;
 }
-.exerciseContainer, .goalsContainer, .foodsContainer{
-  min-width:320px;
+
+.dashboard,
+.exerciseContainer,
+.goalsContainer,
+.foodsContainer {
+  min-width: 320px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap:0.5rem;
+  gap: 0.5rem;
+  margin: auto;
 }
-.containerBox{
+
+.containerBox {
+  position: relative;
+  padding: 1rem;
+  text-align: left;
   padding:1rem;
   border-radius: 5px;
-  min-width:150px;
+  min-width: 150px;
   max-width: 300px;
   word-wrap: normal;
   background-color: #222;
-  border:1mm ridge var(--primary-color);
-  box-shadow:0 0 7px var(--primary-color)
+  border: 1mm ridge var(--primary-color);
+  box-shadow: 0 0 7px var(--primary-color)
 }
-svg:hover{
+.containerBox svg{
+  position: absolute;
+  top:5px;
+  right:5px;
+}
+svg:hover {
   cursor: pointer;
-  color:var(--primary-color)
+  color: var(--primary-color)
+}
+svg[data-testid="DeleteOutlineIcon"]:hover{
+  color:red;
 }
 .spinner {
   width: 45px;
@@ -88,36 +116,58 @@ svg:hover{
   border: 11.2px var(--primary-color) double;
   border-left-style: solid;
   border-radius: 50%;
+  margin: auto;
   animation: spinner_animation 0.75s infinite linear;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
 @keyframes spinner_animation {
   to {
-     transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
+
 @media (min-width:670px) {
-  header{
+  header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  form{
+  form {
     display: flex;
     flex-direction: column;
     max-width: 40%;
-    gap:0.5rem;
+    gap: 0.5rem;
     text-align: left;
-    margin:auto;
+    margin: auto;
+    align-items: center;
   }
-  .exerciseContainer, .goalsContainer, .foodsContainer{
+
+  .dashboard,
+  .exerciseContainer,
+  .goalsContainer,
+  .foodsContainer {
     display: flex;
-    max-width:90%;
+    max-width: 90%;
     flex-wrap: wrap;
     justify-content: center;
     justify-items: center;
-    align-items: center;
+
   }
-  
+
+  .dashboard {
+    max-width: 70%;
+  }
+
+  .dashboard>div {
+    min-width: 300px;
+  }
+
 }

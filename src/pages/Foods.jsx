@@ -6,37 +6,48 @@ import { useEffect, useState } from "react";
 import { FoodForm } from "../components/FoodForm";
 import { getFoods, deleteFood } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-
+import FastfoodIcon from "@mui/icons-material/Fastfood";
+import { Loader } from "../components/Loader";
 
 export default function Foods() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const foods = useSelector((state) => state?.foods);
-
+  const loading = useSelector((state) => state?.loading);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFoods());
-  }, [foods]);
+  }, []);
   return (
     <div>
-      <h1>Daily Calorie intake</h1>
-      <div className="foodsContainer">
-        {foods?.map((item) => (
-          <FoodsBox key={item._id} obj={item} dispatch={dispatch} />
-        ))}
-      </div>
-      <button onClick={handleOpen}>Add New Food</button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={boxStyle}>
-          <FoodForm  onClose={handleClose}/>
-        </Box>
-      </Modal>
+      <h1>
+        <span>
+          Daily Calorie intake <FastfoodIcon />
+        </span>
+        <button onClick={handleOpen}>Add New Food</button>
+      </h1>
+      {loading && <Loader />}
+      {!loading && (
+        <>
+          <div className="foodsContainer">
+            {foods?.map((item) => (
+              <FoodsBox key={item._id} obj={item} dispatch={dispatch} />
+            ))}
+          </div>
+
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={boxStyle}>
+              <FoodForm onClose={handleClose} />
+            </Box>
+          </Modal>
+        </>
+      )}
     </div>
   );
 }
@@ -44,13 +55,13 @@ export default function Foods() {
 function FoodsBox({ obj, dispatch }) {
   return (
     <div className="containerBox" key={obj._id}>
-      <h2>
-        {obj?.name}
-        <DeleteOutlineIcon
+      <DeleteOutlineIcon
           onClick={() => {
             dispatch(deleteFood(obj._id));
           }}
         />
+      <h2>
+        {obj?.name}
       </h2>
 
       <p>Carbohydrate : {obj?.carbohydrate}</p>
