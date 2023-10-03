@@ -1,4 +1,4 @@
 
 export function Loader (){
-  return <div class="spinner"></div>
+  return <div className="spinner"></div>
 }

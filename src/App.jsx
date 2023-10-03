@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 function App() {
   const error = useSelector((state)=>state?.error)
   if(error){
-    toast.error(error.message)
+    toast.error(error?.message ?? "Something went wrong")
   }
   return (
     <div className="App">
