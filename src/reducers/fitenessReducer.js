@@ -38,7 +38,7 @@ const initialState = {
 }
 
 const fitnessReducer = (state = initialState, { type, payload }) => {
-  console.log(state)
+
   switch (type) {
     case SET_LOADING:
       return { ...state, loading: true }
