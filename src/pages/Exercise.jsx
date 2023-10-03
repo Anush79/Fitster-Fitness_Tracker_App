@@ -8,11 +8,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { AddExerciseForm } from "../components/ExerciseForm";
 import { deleteExercise, getExercises } from "../redux/actions";
 import { boxStyle } from '../utils/constants';
+import { Loader } from '../components/Loader';
 
 
 export default function Exercise() {
   const dispatch = useDispatch();
   const exercises = useSelector((state) => state?.exercises);
+  const loading = useSelector((state) => state?.loading);
+
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -24,7 +27,9 @@ export default function Exercise() {
   return (
     <div>
       <h1>Exercises <FitnessCenterIcon /></h1>
-
+{/* {
+  loading && <Loader/>
+} */}
       <div className="exerciseContainer">
         {exercises?.map((item) => (
           <ExerciseBox obj={item} key={item._id} dispatch={dispatch} />

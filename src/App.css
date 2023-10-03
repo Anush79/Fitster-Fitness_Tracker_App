@@ -82,6 +82,20 @@ svg:hover{
   cursor: pointer;
   color:var(--primary-color)
 }
+.spinner {
+  width: 45px;
+  height: 45px;
+  border: 11.2px var(--primary-color) double;
+  border-left-style: solid;
+  border-radius: 50%;
+  animation: spinner_animation 0.75s infinite linear;
+}
+
+@keyframes spinner_animation {
+  to {
+     transform: rotate(360deg);
+  }
+}
 @media (min-width:670px) {
   header{
     display: flex;
