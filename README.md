@@ -8,10 +8,10 @@ In the project directory, you can run:
 ### `npm start`
 
 ## Live Link
-Open [http://localhost:3000](https://fitster.netlify.app/) to view it in your browser.
+Open [Fitster](https://fitster.netlify.app/) to view it in your browser.
 
 ## Backend Link
-Replit link (https://replit.com/@AnushkaJaiswal7/fitnesstracker)
+Replit link [Fitness tracker Backend](https://replit.com/@AnushkaJaiswal7/fitnesstracker)
 
 ### `npm test`
 
