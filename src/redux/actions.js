@@ -41,7 +41,7 @@ export const addExercise = (exerciseData) => async (dispatch) => {
     console.log(response);
     dispatch({
       type: ADD_EXERCISE_SUCCESS,
-      payload: response,
+      payload: response.data,
     });
   } catch (error) {
     console.error(error);
@@ -53,9 +53,10 @@ export const addFood = (FoodData) => async (dispatch) => {
   try {
     dispatch({ type: SET_LOADING });
     const response = await addFoodDataService(FoodData);
+    
     dispatch({
       type: ADD_FOOD_SUCCESS,
-      payload: response,
+      payload: response.data,
     });
   } catch (error) {
     console.error(error);
@@ -69,7 +70,7 @@ export const addGoal = (goalData) => async (dispatch) => {
     const response = await addGoalDataService(goalData);
     dispatch({
       type: ADD_GOAL_SUCCESS,
-      payload: response,
+      payload: response.data,
     });
   } catch (error) {
     console.error(error);
