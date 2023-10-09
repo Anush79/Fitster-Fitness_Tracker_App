@@ -97,7 +97,7 @@ export const getExercises = () => async (dispatch) => {
     console.log(response);
     dispatch({
       type: GET_EXERCISES_SUCCESS,
-      payload: response.data,
+      payload: response?.data,
     });
   
   } catch (error) {
@@ -113,7 +113,7 @@ export const getFoods = () => async (dispatch) => {
     console.log(response);
     dispatch({
       type: GET_FOODS_SUCCESS,
-      payload: response.data,
+      payload: response?.data,
     });
   
   } catch (error) {
@@ -129,7 +129,7 @@ export const getGoals = () => async (dispatch) => {
     console.log(response);
     dispatch({
       type: GET_GOALS_SUCCESS,
-      payload: response.data,
+      payload: response?.data,
     });
    
   } catch (error) {

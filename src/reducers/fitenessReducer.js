@@ -43,11 +43,11 @@ const fitnessReducer = (state = initialState, { type, payload }) => {
     case SET_LOADING:
       return { ...state, loading: true }
     case GET_EXERCISES_SUCCESS:
-      return { ...state, exercises: [...payload], loading: false }
+      return { ...state, exercises: payload, loading: false }
     case GET_GOALS_SUCCESS:
-      return { ...state, goals: [...payload], loading: false }
+      return { ...state, goals: payload, loading: false }
     case GET_FOODS_SUCCESS:
-      return { ...state, foods: [...payload], loading: false }
+      return { ...state, foods: payload, loading: false }
     case ADD_EXERCISE_SUCCESS:
       return { ...state, exercises: [...state.exercises, payload], loading: false }
     case ADD_FOOD_SUCCESS:

@@ -36,9 +36,13 @@ export default function Exercise() {
       {!loading && (
         <>
           <div className="exerciseContainer">
-            {exercises?.map((item) => (
-              <ExerciseBox obj={item} key={item._id} dispatch={dispatch} />
-            ))}
+            {exercises.length > 0 ? (
+              exercises?.map((item) => (
+                <ExerciseBox obj={item} key={item._id} dispatch={dispatch} />
+              ))
+            ) : (
+              <h3>No exercise data found, Please Add some Exercises</h3>
+            )}
           </div>
 
           <Modal
