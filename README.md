@@ -1,5 +1,17 @@
-# Getting Started with Create React App
+# FitsBit - Fitness Tracker
 
+- Led the development of a web application for fitness tracking using MongoDB, Express.js, React, and Node.js.
+- Designed and implemented a user-friendly dashboard to display fitness metrics and facilitate navigation to different sections.
+- Created an Exercises section with an input form for adding exercises and a dynamic list for managing them.
+- Developed a Food section with features for adding food items and managing the list of added items.
+- Designed and implemented a Goal Tracker section with input forms for setting fitness goals and a dynamic list to track progress.
+- Implemented MongoDB for data storage, ensuring efficient data retrieval and storage.
+
+## Technologies Used:
+
+* Frontend: React.js
+* Backend: Node.js, Express.js
+* Database: MongoDB
 
 ## Available Scripts
 
