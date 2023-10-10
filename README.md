@@ -1,4 +1,4 @@
-# FitsBit - Fitness Tracker
+# [FitsBit - Fitness Tracker](https://fitster.netlify.app/) 
 
 - Led the development of a web application for fitness tracking using MongoDB, Express.js, React, and Node.js.
 - Designed and implemented a user-friendly dashboard to display fitness metrics and facilitate navigation to different sections.
