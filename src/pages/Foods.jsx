@@ -31,7 +31,7 @@ export default function Foods() {
       {!loading && (
         <>
           <div className="foodsContainer">
-            {foods.length > 0 ? 
+            {foods?.length > 0 ? 
                foods?.map((item) => (
               <FoodsBox key={item._id} obj={item} dispatch={dispatch} />
             )):<h3>No data found, Please add some food data</h3>}

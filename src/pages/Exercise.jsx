@@ -36,7 +36,7 @@ export default function Exercise() {
       {!loading && (
         <>
           <div className="exerciseContainer">
-            {exercises.length > 0 ? (
+            {exercises?.length > 0 ? (
               exercises?.map((item) => (
                 <ExerciseBox obj={item} key={item._id} dispatch={dispatch} />
               ))

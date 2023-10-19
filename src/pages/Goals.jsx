@@ -29,7 +29,7 @@ export default function Goals() {
       {!loading && (
         <>
           <div className="goalsContainer">
-            {goals.length>0 ? 
+            {goals?.length>0 ? 
                goals?.map((item) => (
               <TargetBox obj={item} dispatch={dispatch} />
             )):<h3>No data found, please Add some goals.</h3>}
